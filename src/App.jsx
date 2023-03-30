@@ -1,8 +1,17 @@
+import { useState } from 'react'
+
+
+import { HeaderComponent } from "./Components/Header"
+import { ImageResults } from "./Components/Image-result"
+
 function App() {
+  const [listImages, setListImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+  console.log(listImages)
   return (
     <div>
-     <h1 className="text-red-500">Oscar Anillo</h1>
-     <p>Fullstack Developer</p>
+     <HeaderComponent setListImages={setListImages} setIsLoading={setIsLoading}/>
+     <ImageResults listImages={listImages} isLoading={isLoading}/>
     </div>
   )
 }
